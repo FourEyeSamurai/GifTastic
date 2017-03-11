@@ -45,40 +45,18 @@ function displayTransformers() {
 
             var topicImage = $("<img>");
             topicImage.attr("src", results[i].images.fixed_height.url);
-
+            topicImage.addClass("gif")
             gifDiv.prepend(p);
             gifDiv.prepend(topicImage);
 
             $("#gifs").prepend(gifDiv);
 
      	};
+
  	});
- 
 };	
 
- $(".gif").on("click", function() {
-    	 var state = $(this).attr("data-state");
-    	  if(state === "still"){
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state", "animate")
-            }else{
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still")
-            }
-   		
-   			var results = response.data;
-
-   		for (var i = 0; i < results.length; i++) {
-          var topicsDiv = $("<div>");
-          var p = $("<p>").text("Rating: " + results[i].rating);
-          var topicsImage = $("<img>");
-          topicImage.attr("src", results[i].images.fixed_height.url);
-          topicDiv.append(p);
-          topicDiv.append(topicImage);
-          $("#gifs").prepend(topicDiv);
-
-     };
- });   
+ 
 	
 
 	$(document).on("click", ".transformer", displayTransformers)
@@ -89,5 +67,29 @@ function displayTransformers() {
      
 
 });	       
+
+// $(".gif").on("click", function() {
+//     	 var state = $(this).attr("data-state");
+//     	  if(state === "still"){
+//               $(this).attr("src", $(this).attr("data-animate"));
+//               $(this).attr("data-state", "animate")
+//             }else{
+//               $(this).attr("src", $(this).attr("data-still"));
+//               $(this).attr("data-state", "still")
+//             }
+   		
+//    			var results = response.data;
+
+//    		for (var i = 0; i < results.length; i++) {
+//           var topicsDiv = $("<div>");
+//           var p = $("<p>").text("Rating: " + results[i].rating);
+//           var topicsImage = $("<img>");
+//           topicImage.attr("src", results[i].images.fixed_height.url);
+//           topicDiv.append(p);
+//           topicDiv.append(topicImage);
+//           $("#gifs").prepend(topicDiv);
+
+//      };
+//  });   
 
     	
